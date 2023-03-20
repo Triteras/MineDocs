@@ -162,7 +162,6 @@ const config = {
         darkTheme: darkCodeTheme,
       },
     }),
-  themes: ["@docusaurus/theme-search-algolia"],
 };
 
 module.exports = config;

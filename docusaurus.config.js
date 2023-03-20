@@ -20,6 +20,7 @@ const config = {
   // If you aren't using GitHub pages, you don't need these.
   organizationName: "Triteras", // Usually your GitHub org/user name.
   projectName: "MineDocs", // Usually your repo name.
+  trailingSlash: false,
 
   onBrokenLinks: "throw",
   onDuplicateRoutes: "throw",

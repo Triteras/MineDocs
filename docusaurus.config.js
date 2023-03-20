@@ -67,7 +67,7 @@ const config = {
         appId: "GK9883L1MC",
 
         // Public API key: it is safe to commit it
-        apiKey: "55cc3d5bb5d2504affe732bf2d462f2a",
+        apiKey: "b576496d777f6d8b5a91707693e61bc8",
 
         indexName: "Triteras",
 

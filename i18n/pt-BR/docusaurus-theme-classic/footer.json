@@ -1,0 +1,38 @@
+{
+  "link.title.Documentação": {
+    "message": "Documentação",
+    "description": "The title of the footer links column with title=Documentação in the footer"
+  },
+  "link.title.Comunidade": {
+    "message": "Comunidade",
+    "description": "The title of the footer links column with title=Comunidade in the footer"
+  },
+  "link.title.Mais": {
+    "message": "Mais",
+    "description": "The title of the footer links column with title=Mais in the footer"
+  },
+  "link.item.label.Documentação do Servidor": {
+    "message": "Documentação do Servidor",
+    "description": "The label of footer link with label=Documentação do Servidor linking to docs/inicio/bemvindo"
+  },
+  "link.item.label.Discord Minecraft em Português": {
+    "message": "Discord Minecraft em Português",
+    "description": "The label of footer link with label=Discord Minecraft em Português linking to https://discordapp.com/invite/A2mzgJgrmj"
+  },
+  "link.item.label.Discord Triteras": {
+    "message": "Discord Triteras",
+    "description": "The label of footer link with label=Discord Triteras linking to https://discordapp.com/invite/AEAPmS3gjg"
+  },
+  "link.item.label.Blog": {
+    "message": "Blog",
+    "description": "The label of footer link with label=Blog linking to /blog"
+  },
+  "link.item.label.GitHub": {
+    "message": "GitHub",
+    "description": "The label of footer link with label=GitHub linking to https://github.com/facebook/docusaurus"
+  },
+  "copyright": {
+    "message": "Copyright © 2023 Triteras",
+    "description": "The footer copyright"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.tutorialSidebar.category.🏠 Início": {
+    "message": "🏠 Início",
+    "description": "The label for category 🏠 Início in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.🏠 Início.link.generated-index.description": {
+    "message": "Seja bem-vindo ao servidor de Minecraft do Triteras.",
+    "description": "The generated-index page description for category 🏠 Início in sidebar tutorialSidebar"
+  }
+}

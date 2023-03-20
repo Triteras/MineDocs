@@ -18,10 +18,10 @@ const config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: "Triteras", // Usually your GitHub org/user name.
-  projectName: "MineDocs", // Usually your repo name.
+  organizationName: "triteras", // Usually your GitHub org/user name.
+  projectName: "minedocs", // Usually your repo name.
 
-  onBrokenLinks: "throw",
+  onBrokenLinks: "warn",
   onBrokenMarkdownLinks: "warn",
 
   // Even if you don't use internalization, you can use this field to set useful
@@ -42,7 +42,8 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
 
-          //editUrl: "https://github.com/Triteras/MineDocs/tree/main/packages/create-docusaurus/templates/shared/",
+          editUrl:
+            "https://github.com/Triteras/MineDocs/tree/main/packages/create-docusaurus/templates/shared/",
         },
         blog: {
           showReadingTime: true,

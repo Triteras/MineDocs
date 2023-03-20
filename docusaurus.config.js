@@ -87,7 +87,7 @@ const config = {
         items: [
           {
             type: "doc",
-            docId: "inicio/bemvindo",
+            docId: "inicio/bem-vindo-ao-triteras",
             position: "left",
             label: "Documentação",
           },
@@ -107,7 +107,7 @@ const config = {
             items: [
               {
                 label: "Documentação do Servidor",
-                to: "docs/inicio/bemvindo",
+                to: "docs/inicio/bem-vindo-ao-triteras",
               },
             ],
           },
@@ -138,7 +138,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Triteras`,
+        copyright: `Direitos Autorais © ${new Date().getFullYear()} Triteras`,
       },
       prism: {
         theme: lightCodeTheme,

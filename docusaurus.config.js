@@ -87,7 +87,7 @@ const config = {
         items: [
           {
             type: "doc",
-            docId: "inicio/bem-vindo-ao-triteras",
+            docId: "inicio/bemvindoaotriteras",
             position: "left",
             label: "Documentação",
           },
@@ -107,7 +107,7 @@ const config = {
             items: [
               {
                 label: "Documentação do Servidor",
-                to: "docs/inicio/bem-vindo-ao-triteras",
+                to: "docs/inicio/bemvindoaotriteras",
               },
             ],
           },

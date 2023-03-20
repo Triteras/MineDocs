@@ -13,6 +13,7 @@ const searchLocalPlugin = [
   // @ts-ignore
   ({
     hashed: true,
+    language: "pt",
   }),
 ];
 

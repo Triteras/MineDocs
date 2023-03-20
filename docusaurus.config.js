@@ -5,18 +5,6 @@ const projectName = "MineDocs";
 const lightCodeTheme = require("prism-react-renderer/themes/github");
 const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
-// TODO: Wait for docusaurus typescript support
-/** @type {import('@docusaurus/types').PluginConfig} */
-const searchLocalPlugin = [
-  require.resolve("@easyops-cn/docusaurus-search-local"),
-  /** @type {import("@easyops-cn/docusaurus-search-local").PluginOptions} */
-  // @ts-ignore
-  ({
-    hashed: true,
-    language: "pt",
-  }),
-];
-
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: "Triteras Minecraft",
@@ -76,6 +64,35 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      algolia: {
+        // The application ID provided by Algolia
+        appId: "S803N8AY5F",
+
+        // Public API key: it is safe to commit it
+        apiKey: "2a77cc0b2a5f139bd3b04f9c230b2b60",
+
+        indexName: "minetriteras",
+
+        // Optional: see doc section below
+        contextualSearch: true,
+
+        // Optional: Specify domains where the navigation should occur through window.location instead on history.push. Useful when our Algolia config crawls multiple documentation sites and we want to navigate with window.location.href to them.
+        externalUrlRegex: "external\\.com|domain\\.com",
+
+        // Optional: Replace parts of the item URLs from Algolia. Useful when using the same search index for multiple deployments using a different baseUrl. You can use regexp or string in the `from` param. For example: localhost:3000 vs myCompany.com/docs
+        replaceSearchResultPathname: {
+          from: "/docs/", // or as RegExp: /\/docs\//
+          to: "/",
+        },
+
+        // Optional: Algolia search parameters
+        searchParameters: {},
+
+        // Optional: path for search page that enabled by default (`false` to disable it)
+        searchPagePath: "search",
+
+        //... other Algolia params
+      },
       // Replace with your project's social card
       image: "img/docusaurus-social-card.jpg",
       navbar: {
@@ -101,43 +118,43 @@ const config = {
       },
       footer: {
         style: "dark",
-        links: [
-          {
-            title: "Documentação",
-            items: [
-              {
-                label: "Documentação do Servidor",
-                to: "docs/inicio/bem-vindo-ao-triteras",
-              },
-            ],
-          },
-          {
-            title: "Comunidade",
-            items: [
-              {
-                label: "Discord Minecraft em Português",
-                href: "https://discordapp.com/invite/A2mzgJgrmj",
-              },
-              {
-                label: "Discord Triteras",
-                href: "https://discordapp.com/invite/AEAPmS3gjg",
-              },
-            ],
-          },
-          {
-            title: "Mais",
-            items: [
-              {
-                label: "Blog",
-                to: "/blog",
-              },
-              {
-                label: "GitHub",
-                href: "https://github.com/facebook/docusaurus",
-              },
-            ],
-          },
-        ],
+        // links: [
+        //   {
+        //     title: "Documentação",
+        //     items: [
+        //       {
+        //         label: "Documentação do Servidor",
+        //         to: "docs/inicio/bem-vindo-ao-triteras",
+        //       },
+        //     ],
+        //   },
+        //   {
+        //     title: "Comunidade",
+        //     items: [
+        //       {
+        //         label: "Discord Minecraft em Português",
+        //         href: "https://discordapp.com/invite/A2mzgJgrmj",
+        //       },
+        //       {
+        //         label: "Discord Triteras",
+        //         href: "https://discordapp.com/invite/AEAPmS3gjg",
+        //       },
+        //     ],
+        //   },
+        //   {
+        //     title: "Mais",
+        //     items: [
+        //       {
+        //         label: "Blog",
+        //         to: "/blog",
+        //       },
+        //       {
+        //         label: "GitHub",
+        //         href: "https://github.com/facebook/docusaurus",
+        //       },
+        //     ],
+        //   },
+        // ],
         copyright: `Direitos Autorais © ${new Date().getFullYear()} Triteras`,
       },
       prism: {
@@ -145,7 +162,7 @@ const config = {
         darkTheme: darkCodeTheme,
       },
     }),
-  themes: [searchLocalPlugin],
+  themes: ["@docusaurus/theme-search-algolia"],
 };
 
 module.exports = config;

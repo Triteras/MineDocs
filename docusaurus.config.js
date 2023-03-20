@@ -45,6 +45,8 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           //editUrl: `https://github.com/${organizationName}/${projectName}/tree/main/`,
+          path: "docs",
+          routeBasePath: "/",
           showLastUpdateAuthor: false,
           showLastUpdateTime: false,
         },
@@ -80,6 +82,7 @@ const config = {
         externalUrlRegex: "external\\.com|domain\\.com",
 
         // Optional: Replace parts of the item URLs from Algolia. Useful when using the same search index for multiple deployments using a different baseUrl. You can use regexp or string in the `from` param. For example: localhost:3000 vs myCompany.com/docs
+
         replaceSearchResultPathname: {
           from: "/docs/", // or as RegExp: /\/docs\//
           to: "/",

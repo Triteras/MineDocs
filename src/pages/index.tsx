@@ -19,7 +19,7 @@ function HomepageHeader() {
             className="button button--secondary button--lg"
             to="/docs/inicio/bem-vindo-ao-triteras"
           >
-            Docusaurus Tutorial - 5min ⏱️
+            Começar
           </Link>
         </div>
       </div>
@@ -31,8 +31,8 @@ export default function Home(): JSX.Element {
   const { siteConfig } = useDocusaurusContext();
   return (
     <Layout
-      title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />"
+      title={`${siteConfig.title}`}
+      description="Documentação oficial do servidor do Triteras Minecraft"
     >
       <HomepageHeader />
       <main>

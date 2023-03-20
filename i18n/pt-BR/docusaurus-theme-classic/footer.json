@@ -32,7 +32,7 @@
     "description": "The label of footer link with label=GitHub linking to https://github.com/facebook/docusaurus"
   },
   "copyright": {
-    "message": "Copyright © 2023 Triteras",
+    "message": "Direitos Autorais © 2023 Triteras",
     "description": "The footer copyright"
   }
 }

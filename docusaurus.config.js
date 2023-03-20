@@ -107,7 +107,7 @@ const config = {
             items: [
               {
                 label: "Documentação do Servidor",
-                to: "docs/inicio/bemvindoaotriteras",
+                to: "docs/inicio/bem-vindo-ao-triteras",
               },
             ],
           },

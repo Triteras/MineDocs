@@ -21,8 +21,9 @@ const config = {
   organizationName: "triteras", // Usually your GitHub org/user name.
   projectName: "minedocs", // Usually your repo name.
 
-  onBrokenLinks: "warn",
-  onBrokenMarkdownLinks: "warn",
+  onBrokenLinks: "throw",
+  onDuplicateRoutes: "throw",
+  onBrokenMarkdownLinks: "throw",
 
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want

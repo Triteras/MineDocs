@@ -19,7 +19,7 @@ function HomepageHeader() {
             className="button button--secondary button--lg"
             to="/inicio/bem-vindo-ao-triteras"
           >
-            Começar
+            ⛏️ COMEÇAR A EXPLORAR
           </Link>
         </div>
       </div>

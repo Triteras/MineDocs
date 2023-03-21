@@ -113,11 +113,6 @@ const config = {
           },
           { to: "/blog", label: "Blog", position: "left" },
           {
-            href: "https://github.com/Triteras/MineDocs",
-            className: "navbar-item-github",
-            position: "right",
-          },
-          {
             href: "https://discordapp.com/invite/A2mzgJgrmj",
             className: "navbar-item-discord",
             position: "right",

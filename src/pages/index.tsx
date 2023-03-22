@@ -32,7 +32,7 @@ export default function Home(): JSX.Element {
   return (
     <Layout
       title={`${siteConfig.title}`}
-      description="Documentação oficial do servidor do Triteras Minecraft"
+      description="Bem-vindo a documentação oficial do servidor do Triteras Minecraft"
     >
       <HomepageHeader />
       <main>

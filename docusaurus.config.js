@@ -8,7 +8,7 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: "Triteras Minecraft",
-  tagline: "Documentação do Servidor do Triteras Minecraft",
+  tagline: "Bem-vindo a documentação oficial do servidor do Triteras Minecraft",
   favicon: "img/favicon.ico",
 
   // Set the production url of your site here

@@ -67,34 +67,115 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       algolia: {
-        // The application ID provided by Algolia
         appId: "S803N8AY5F",
-
-        // Public API key: it is safe to commit it
         apiKey: "2a77cc0b2a5f139bd3b04f9c230b2b60",
-
         indexName: "minetriteras",
-
-        // Optional: see doc section below
         contextualSearch: true,
+        externalUrlRegex: "minedocs.triteras\\.com|triteras\\.com",
+        rateLimit: 8,
+        maxDepth: 10,
+        startUrls: ["https://minedocs.triteras.com/"],
+        sitemaps: ["https://minedocs.triteras.com/sitemap.xml"],
+        ignoreCanonicalTo: true,
+        discoveryPatterns: ["https://minedocs.triteras.com/**"],
+        actions: [
+          {
+            indexName: "minetriteras",
+            pathsToMatch: ["https://minedocs.triteras.com/**"],
+            recordExtractor: ({ $, helpers }) => {
+              // priority order: deepest active sub list header -> navbar active item -> 'Documentation'
+              const lvl0 =
+                $(
+                  ".menu__link.menu__link--sublist.menu__link--active, .navbar__item.navbar__link--active"
+                )
+                  .last()
+                  .text() || "Documentation";
 
-        // Optional: Specify domains where the navigation should occur through window.location instead on history.push. Useful when our Algolia config crawls multiple documentation sites and we want to navigate with window.location.href to them.
-        externalUrlRegex: "external\\.com|domain\\.com",
-
-        // Optional: Replace parts of the item URLs from Algolia. Useful when using the same search index for multiple deployments using a different baseUrl. You can use regexp or string in the `from` param. For example: localhost:3000 vs myCompany.com/docs
-
+              return helpers.docsearch({
+                recordProps: {
+                  lvl0: {
+                    selectors: "",
+                    defaultValue: lvl0,
+                  },
+                  lvl1: ["header h1", "article h1"],
+                  lvl2: "article h2",
+                  lvl3: "article h3",
+                  lvl4: "article h4",
+                  lvl5: "article h5, article td:first-child",
+                  lvl6: "article h6",
+                  content: "article p, article li, article td:last-child",
+                },
+                indexHeadings: true,
+                aggregateContent: true,
+                recordVersion: "v3",
+              });
+            },
+          },
+        ],
+        initialIndexSettings: {
+          MINETRITERAS: {
+            attributesForFaceting: [
+              "type",
+              "lang",
+              "language",
+              "version",
+              "docusaurus_tag",
+            ],
+            attributesToRetrieve: [
+              "hierarchy",
+              "content",
+              "anchor",
+              "url",
+              "url_without_anchor",
+              "type",
+            ],
+            attributesToHighlight: ["hierarchy", "content"],
+            attributesToSnippet: ["content:10"],
+            camelCaseAttributes: ["hierarchy", "content"],
+            searchableAttributes: [
+              "unordered(hierarchy.lvl0)",
+              "unordered(hierarchy.lvl1)",
+              "unordered(hierarchy.lvl2)",
+              "unordered(hierarchy.lvl3)",
+              "unordered(hierarchy.lvl4)",
+              "unordered(hierarchy.lvl5)",
+              "unordered(hierarchy.lvl6)",
+              "content",
+            ],
+            distinct: true,
+            attributeForDistinct: "url",
+            customRanking: [
+              "desc(weight.pageRank)",
+              "desc(weight.level)",
+              "asc(weight.position)",
+            ],
+            ranking: [
+              "words",
+              "filters",
+              "typo",
+              "attribute",
+              "proximity",
+              "exact",
+              "custom",
+            ],
+            highlightPreTag:
+              '<span class="algolia-docsearch-suggestion--highlight">',
+            highlightPostTag: "</span>",
+            minWordSizefor1Typo: 3,
+            minWordSizefor2Typos: 7,
+            allowTyposOnNumericTokens: false,
+            minProximity: 1,
+            ignorePlurals: true,
+            advancedSyntax: true,
+            attributeCriteriaComputedByMinProximity: true,
+            removeWordsIfNoResults: "allOptional",
+            separatorsToIndex: "_",
+          },
+        },
         replaceSearchResultPathname: {
           from: "/docs/", // or as RegExp: /\/docs\//
           to: "/",
         },
-
-        // Optional: Algolia search parameters
-        searchParameters: {},
-
-        // Optional: path for search page that enabled by default (`false` to disable it)
-        searchPagePath: "search",
-
-        //... other Algolia params
       },
       // Replace with your project's social card
       image: "img/docusaurus-social-card.jpg",
